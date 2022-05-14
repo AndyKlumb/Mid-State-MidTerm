@@ -1,0 +1,32 @@
+<html>
+  <title>DeployPage</title>
+  <div class="justify-content-center"></div>
+  <h2>My Squad</h2>
+
+  <div>
+    <div class="row">
+    <select id="deployed-trooper1" #deployedTrooper1 style="padding: 8px; margin: 8px;">
+      <option *ngFor="let trooper of troopers" [ngValue]="trooper">{{trooper.name}}</option>
+    </select>
+
+    <select id="deployed-trooper2" #deployedTrooper2 style="padding: 8px; margin: 8px;">
+      <option *ngFor="let trooper of troopers" [ngValue]="trooper">{{trooper.name}}</option>
+    </select>
+  </div><br />
+    <!-- (click) passes input value to add() and then clears the input -->
+    <div class="row">
+      <button type="button" class="add-button" (click)="getDeployedTroopers(deployedTrooper1.value, deployedTrooper2.value);">
+        Begin Battle
+      </button>
+    </div>
+  </div>
+
+  <ul class="troopers">
+    <li *ngFor="let deployedTrooper of deployedTroopers">
+      <a routerLink="/detail/{{deployedTrooper.id}}">
+        <span class="badge">{{deployedTrooper.id}}</span> {{deployedTrooper.name}}
+      </a>
+      <button type="button" class="delete" title="delete trooper" (click)="delete(deployedTrooper)">x</button>
+    </li>
+  </ul>
+</html>

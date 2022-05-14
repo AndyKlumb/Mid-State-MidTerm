@@ -1,0 +1,9 @@
+<h2>Top Troopers</h2>
+<div class="star wars guide-menu">
+  <a *ngFor="let trooper of troopers"
+      routerLink="/detail/{{trooper.id}}">
+      {{trooper.name}}
+  </a>
+</div>
+
+<app-trooper-search></app-trooper-search>

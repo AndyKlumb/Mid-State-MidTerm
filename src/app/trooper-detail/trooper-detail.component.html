@@ -1,0 +1,14 @@
+<div *ngIf="trooper">
+  <h2>{{trooper.name | uppercase}} Details</h2>
+  <div><span>id: </span>{{trooper.id}}</div>
+  <div><span>health: </span>{{trooper.health}}</div>
+  <div><span>damage: </span>{{trooper.damage}}</div>
+  <div><span>personalShield: </span>{{trooper.personalShield}}</div>
+  <div><span>shieldHealth: </span>{{trooper.shieldHealth}}</div>
+  <div>
+    <label for="trooper-name">Trooper name: </label>
+    <input id="trooper-name" [(ngModel)]="trooper.name" placeholder="Trooper name"/>
+  </div>
+  <button type="button" (click)="goBack()">go back</button>
+  <button type="button" (click)="save()">save</button>
+</div>
